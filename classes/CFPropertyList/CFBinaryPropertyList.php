@@ -7,7 +7,7 @@
  * @package plist
  * @version $Id$
  */
-namespace CFPropertyList;
+//namespace CFPropertyList;
 
 /**
  * Facility for reading and writing binary PropertyLists. Ported from {@link http://www.opensource.apple.com/source/CF/CF-476.15/CFBinaryPList.c CFBinaryPList.c}.

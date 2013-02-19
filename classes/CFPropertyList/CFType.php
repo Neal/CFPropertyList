@@ -8,7 +8,7 @@
  * @subpackage plist.types
  * @version $Id$
  */
-namespace CFPropertyList;
+//namespace CFPropertyList;
 use \DOMDocument, \Iterator, \ArrayAccess;
 
 /**

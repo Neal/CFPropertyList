@@ -7,7 +7,7 @@
  * @package plist
  * @version $Id$
  */
-namespace CFPropertyList;
+//namespace CFPropertyList;
 
 /**
  * Basic Input / Output Exception

@@ -12,7 +12,7 @@
   * @example example-create-04.php Using and extended {@link CFTypeDetector}
   */
 
-namespace CFPropertyList;
+//namespace CFPropertyList;
 use \DateTime, \Iterator;
 
 class CFTypeDetector {
@@ -40,7 +40,6 @@ class CFTypeDetector {
    * @var boolean
    */
   protected $castNumericStrings = true;
-
 
   /**
    * Create new CFTypeDetector
@@ -169,7 +168,6 @@ class CFTypeDetector {
           return new CFData($value);
         }
         return new CFString($value);
-
       break;
 
       default:

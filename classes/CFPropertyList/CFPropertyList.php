@@ -15,8 +15,8 @@
  * @example example-modify-01.php Read, modify and save a PropertyList
  */
 
-namespace CFPropertyList;
-use \Iterator, \DOMDocument, \DOMException, DOMImplementation, DOMNode;
+//namespace CFPropertyList;
+//use \Iterator, \DOMDocument, \DOMException, DOMImplementation, DOMNode;
 
 /**
  * Require IOException, PListException, CFType and CFBinaryPropertyList
@@ -273,7 +273,7 @@ class CFPropertyList extends CFBinaryPropertyList implements Iterator {
       // skip if we can't handle the element
       if(!isset(self::$types[$n->nodeName])) continue;
 
-      $class = 'CFPropertyList\\'.self::$types[$n->nodeName];
+      $class = self::$types[$n->nodeName];
       $key = null;
 
       // find previous <key> if possible
@@ -288,7 +288,7 @@ class CFPropertyList extends CFBinaryPropertyList implements Iterator {
           $value = new $class(CFDate::dateValue($n->nodeValue));
           break;
         case 'data':
-          $value = new $class($n->nodeValue,true);
+          $value = new $class($n->nodeValue, true);
           break;
         case 'string':
           $value = new $class($n->nodeValue);
@@ -375,7 +375,7 @@ class CFPropertyList extends CFBinaryPropertyList implements Iterator {
    * @param bool $formatted Print plist formatted (i.e. with newlines and whitespace indention) if true; defaults to false
    * @return string The XML content
    */
-  public function toXML($formatted=false) {
+  public function toXML($formatted=true) {
     $domimpl = new DOMImplementation();
     // <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     $dtd = $domimpl->createDocumentType('plist', '-//Apple Computer//DTD PLIST 1.0//EN', 'http://www.apple.com/DTDs/PropertyList-1.0.dtd');
